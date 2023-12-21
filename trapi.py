@@ -457,13 +457,3 @@ class Skyblock:
             # Handling any exceptions that might occur during the request
             print(f"An error occurred: {e}")
             return None
-        
-PlayerData = PlayerData("3eca23dd-c899-4068-8b1e-e950658475e0")
-
-result = PlayerData.getRecentGames()
-
-if result:
-    print("Response:")
-    print(result)
-else:
-    print("Request failed.")
