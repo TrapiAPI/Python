@@ -457,3 +457,26 @@ class Skyblock:
             # Handling any exceptions that might occur during the request
             print(f"An error occurred: {e}")
             return None
+        
+class Mojang:
+    def __init__(self, api_key=''):
+        self.api_key = api_key
+
+    def getProfileInfo(self, username=None):
+        try:
+            # Sending a GET request to the specified URL
+            response = requests.get(BASE_URL + f'/v1/mojang/users/profiles/minecraft/{username}?api_key=' + self.api_key)
+
+            # Checking if the request was successful (status code 200)
+            if response.status_code == 200:
+                # Returning the content of the response
+                return response.text
+            else:
+                # Printing an error message if the request was not successful
+                print(f"Error: {response.status_code}")
+                return None
+
+        except Exception as e:
+            # Handling any exceptions that might occur during the request
+            print(f"An error occurred: {e}")
+            return None
