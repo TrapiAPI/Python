@@ -1,6 +1,6 @@
 import requests
 
-BASE_URL = 'https://api.trapi.dev/'
+BASE_URL = 'https://api.trapi.dev'
 
 
 class PlayerData:
