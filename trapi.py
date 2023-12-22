@@ -480,3 +480,64 @@ class Mojang:
             # Handling any exceptions that might occur during the request
             print(f"An error occurred: {e}")
             return None
+
+class Other:
+    def __init__(self, api_key=''):
+        self.api_key = api_key
+
+    def addSums(self, num1, num2):
+        try:
+            # Sending a GET request to the specified URL
+            response = requests.get(BASE_URL + f'/v1/add/{num1}/{num2}?api_key=' + self.api_key)
+
+            # Checking if the request was successful (status code 200)
+            if response.status_code == 200:
+                # Returning the content of the response
+                return response.text
+            else:
+                # Printing an error message if the request was not successful
+                print(f"Error: {response.status_code}")
+                return None
+
+        except Exception as e:
+            # Handling any exceptions that might occur during the request
+            print(f"An error occurred: {e}")
+            return None
+        
+    def randomWord(self):
+        try:
+            # Sending a GET request to the specified URL
+            response = requests.get(BASE_URL + f'/v1/randomword/?api_key=' + self.api_key)
+
+            # Checking if the request was successful (status code 200)
+            if response.status_code == 200:
+                # Returning the content of the response
+                return response.text
+            else:
+                # Printing an error message if the request was not successful
+                print(f"Error: {response.status_code}")
+                return None
+
+        except Exception as e:
+            # Handling any exceptions that might occur during the request
+            print(f"An error occurred: {e}")
+            return None
+        
+    def headsOrtails(self):
+        try:
+            # Sending a GET request to the specified URL
+            response = requests.get(BASE_URL + f'/v1/h-t/?api_key=' + self.api_key)
+
+            # Checking if the request was successful (status code 200)
+            if response.status_code == 200:
+                # Returning the content of the response
+                return response.text
+            else:
+                # Printing an error message if the request was not successful
+                print(f"Error: {response.status_code}")
+                return None
+
+        except Exception as e:
+            # Handling any exceptions that might occur during the request
+            print(f"An error occurred: {e}")
+            return None
